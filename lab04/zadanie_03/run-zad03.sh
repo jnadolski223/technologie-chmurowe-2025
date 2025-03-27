@@ -5,7 +5,7 @@ total_space_bytes=$((total_space * 1024))
 
 docker system df -v | awk '/Local Volumes space usage:/,/Build cache usage:/' | awk 'NR>3 && NF>=2 {print $1, $NF}' | head -n -1 > volumes.txt
 
-echo "=== Zużycie przestrzeni dyskowej przez wolumeny Docker ==="
+echo "=== Zużycie przestrzeni dyskowej przez woluminy Docker ==="
 
 while read -r volume_name volume_size; do
 
